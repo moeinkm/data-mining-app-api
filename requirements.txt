@@ -3,6 +3,8 @@ djangorestframework>=3.9.0,<3.10.0
 
 flake8>=3.6.0,<3.7.0
 
-pandas>=1.4.0,<1.5.0
-scipy
+# numpy>=1.14.0,<1.15.0
+# scipy
+# pandas>=1.4.0,<1.5.0
+
 jdatetime
