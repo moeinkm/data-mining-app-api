@@ -1,6 +1,6 @@
 import logging
 
-from common import to_dictionary, prepare_data
+from common import prepare_data, to_jalali
 
 
 TIMEFRAME_TRANSLATION = {
@@ -14,7 +14,7 @@ TIMEFRAME_TRANSLATION = {
 }
 
 
-def interpolation(serializer_data, service_name='service1'):
+def interpolation(serializer_data, service_name=None):
     """Interpolate data with given method in config and different timeframes"""
     df_data, config = prepare_data(serializer_data)
 
@@ -40,3 +40,16 @@ def interpolation(serializer_data, service_name='service1'):
         raise ValueError('method not supported')
 
     return to_dictionary(df_data, config, service_name)
+
+
+def to_dictionary(df_data, config, service_name=None):
+    """Convert DataFrame to python dict"""
+    df_data['index'] = range(len(df_data))
+    df_data['time'] = df_data.index
+    df_data.index = df_data['index']
+    del df_data['index']
+
+    if config.get('type') == 'shamsi' or service_name == 'service2':
+        to_jalali(df_data)
+
+    return df_data.to_dict()
