@@ -30,7 +30,7 @@ def prepare_data(serializer_data):
     if config.get('type') == 'shamsi':
         to_gregorian(df_data)
 
-    if df_data.get('time'):
+    if not df_data.get('time').empty:
         df_data['time'] = pd.to_datetime(df_data['time'], utc=True)
 
         df_data.index = df_data['time']

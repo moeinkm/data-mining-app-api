@@ -13,13 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.schemas import get_schema_view
+from rest_framework_swagger.renderers import SwaggerUIRenderer, OpenAPIRenderer
+
+schema_view = get_schema_view(title='Data mining app', renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer])
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/service1/', include('service1.urls')),
-    path('api/service2/', include('service2.urls')),
-    path('api/service3/', include('service3.urls')),
-    path('api/service4/', include('service4.urls'))
+    path('api/data-mining/', include('core.urls')),
+    url(r'^', schema_view, name="docs"),
 ]
