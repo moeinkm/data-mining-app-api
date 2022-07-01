@@ -1,5 +1,3 @@
-import logging
-
 from common import prepare_data, to_jalali
 
 

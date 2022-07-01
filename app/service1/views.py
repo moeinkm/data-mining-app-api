@@ -1,11 +1,9 @@
-import logging
-
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
 
 from service1.serializers import Service1Serializer
-from interpolation import interpolation
+from algorithms.interpolation import interpolation
 
 
 class Service1View(generics.CreateAPIView):

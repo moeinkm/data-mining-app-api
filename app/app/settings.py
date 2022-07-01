@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'service1',
     'service2',
-    'service3'
+    'service3',
+    'service4'
 ]
 
 MIDDLEWARE = [

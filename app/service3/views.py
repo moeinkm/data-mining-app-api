@@ -2,13 +2,13 @@ from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
 
-from service2.serializers import Service2Serializer
-from outlier_detection import outlier_detection
+from service3.serializers import Service3Serializer
+from algorithms.outlier_detection import outlier_detection
 
 
 class Service3View(generics.CreateAPIView):
     """Service3 view"""
-    serializer_class = Service2Serializer
+    serializer_class = Service3Serializer
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

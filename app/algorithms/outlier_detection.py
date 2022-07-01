@@ -1,5 +1,3 @@
-import logging
-
 import numpy as np
 from scipy.stats import zscore
 
@@ -19,7 +17,6 @@ def zscore_outlier_detection(df_data):
     THRESHOLD = 3
     df_data['zscore'] = zscore(df_data['feature'])
     df_data['method1'] = np.where(abs(df_data['zscore']) > THRESHOLD, True, False)
-    logging.critical(df_data)
     del df_data['zscore']
 
 

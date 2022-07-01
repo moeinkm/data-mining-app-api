@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from service2.serializers import Service2Serializer
-from interpolation import interpolation
+from algorithms.interpolation import interpolation
 
 
 class Service2View(generics.CreateAPIView):
