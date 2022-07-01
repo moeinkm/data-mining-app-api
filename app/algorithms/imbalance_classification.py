@@ -32,6 +32,7 @@ class ImbalancedClassification:
 
     @staticmethod
     def oversampling(df_data):
+        """Duplicate minor class samples randomly"""
         nmax = df_data['class'].value_counts().max()
 
         lst = [df_data]
@@ -45,6 +46,7 @@ class ImbalancedClassification:
 
     @staticmethod
     def smote(df_data):
+        """Balance imbalanced classification data using SMOTE method"""
         nmin = df_data['class'].value_counts().min()
 
         x = df_data.drop(['class', 'id'], axis=1)
