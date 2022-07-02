@@ -1,5 +1,3 @@
-import logging
-
 from common import prepare_data, to_jalali
 
 
@@ -20,7 +18,8 @@ class Interpolation:
         self.interpolated_data = self.interpolation(serializer_data)
 
     def interpolation(self, serializer_data):
-        """Interpolate data with given method in config and different timeframes"""
+        """Interpolate data with given method in config
+         and different timeframes"""
         df_data, config = prepare_data(serializer_data)
 
         try:
@@ -35,12 +34,17 @@ class Interpolation:
         # skip thursday and friday
         if config.get('skip_holiday'):
             df_data['time'] = df_data.index
-            df_data = df_data[df_data['time'].apply(lambda x: x.weekday() not in [3, 4])]
+            df_data = df_data[
+                df_data['time'].apply(lambda x: x.weekday() not in [3, 4])
+            ]
 
         if config.get('interpolation') == 'linear':
             df_data['vol'] = df_data['vol'].interpolate(method='linear')
         elif config.get('interpolation') == 'spline':
-            df_data['vol'] = df_data['vol'].interpolate(method='polynomial', order=2)
+            df_data['vol'] = df_data['vol'].interpolate(
+                method='polynomial',
+                order=2
+            )
         else:
             raise ValueError('method not supported')
 
@@ -52,7 +56,6 @@ class Interpolation:
         df_data['time'] = df_data.index
         df_data.index = df_data['index']
         del df_data['index']
-        logging.critical(self.service_name)
         if config.get('type') == 'shamsi' or self.service_name == 'service2':
             to_jalali(df_data)
 

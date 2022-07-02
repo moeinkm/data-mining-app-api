@@ -20,7 +20,11 @@ class OutlierDetection:
     def zscore_outlier_detection(self, df_data):
         """Outlier detection using z-score"""
         df_data['zscore'] = zscore(df_data['feature'])
-        df_data['method1'] = np.where(abs(df_data['zscore']) > self.ZSCORE_THRESHOLD, True, False)
+        df_data['method1'] = np.where(
+            abs(df_data['zscore']) > self.ZSCORE_THRESHOLD,
+            True,
+            False
+        )
         del df_data['zscore']
 
     @staticmethod
@@ -30,7 +34,8 @@ class OutlierDetection:
         q3 = df_data['feature'].quantile(0.75)
         iqr = q3 - q1
         df_data['method2'] = np.where(
-            (df_data['feature'] < (q1 - (1.5 * iqr))) | (df_data['feature'] > (q3 + (1.5 * iqr))),
+            (df_data['feature'] < (q1 - (1.5 * iqr))) |
+            (df_data['feature'] > (q3 + (1.5 * iqr))),
             True,
             False
         )

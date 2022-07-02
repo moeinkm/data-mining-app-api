@@ -1,5 +1,3 @@
-import logging
-
 import numpy as np
 import pandas as pd
 from imblearn.over_sampling import SMOTE
@@ -14,7 +12,6 @@ class ImbalancedClassification:
 
     def balance_data(self, serializer_data):
         """Call outlier detection methods in order to add method columns"""
-        logging.critical(serializer_data)
         df_data, config = prepare_data(serializer_data)
 
         assert config.get('method') is not None
@@ -26,7 +23,9 @@ class ImbalancedClassification:
     def undersampling(df_data):
         """Delete major class samples randomly"""
         nmin = df_data['class'].value_counts().min()
-        df_data = df_data.groupby('class').apply(lambda x: x.sample(nmin)).reset_index(drop=True)
+        df_data = df_data.groupby('class').apply(
+            lambda x: x.sample(nmin)
+        ).reset_index(drop=True)
 
         return df_data
 
