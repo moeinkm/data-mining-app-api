@@ -6,7 +6,7 @@ from rest_framework_swagger.renderers import SwaggerUIRenderer,\
     OpenAPIRenderer
 
 schema_view = get_schema_view(
-    title='Data mining app',
+    title='Preprocess data app',
     renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer]
 )
 
@@ -14,5 +14,5 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/data-mining/', include('core.urls')),
-    url(r'^', schema_view, name="docs"),
+    url(r'swagger/', schema_view, name="docs"),
 ]
