@@ -15,3 +15,5 @@ docker-compose build
 docker-compose up 
 ```
 Then you have access to this services on port `8000`
+
+To see API Swagger documentation access `<domain>:8000/swagger`. If you're running it localy `<domain>` is `localhost`.
