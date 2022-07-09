@@ -11,7 +11,7 @@ docker-compose up
 ```
 Then you have access to this services on port `8000`
 
-To see API Swagger documentation access `<domain>:8000/swagger`. If you're running it localy `<domain>` is `localhost`.
+To see API Swagger documentation access `<domain>:8000/swagger`. If you're running it locally `<domain>` is `localhost`.
 
 To pull image from Docker hub do:
 ```
