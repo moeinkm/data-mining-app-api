@@ -20,22 +20,22 @@ docker pull piron/preprocess-data-app-api:latest
 For more info about docker image see [Docker hub repository](https://hub.docker.com/repository/docker/piron/preprocess-data-app-api/general)
 ## What is it
 Data mining project containing 3 major services
-- Interpolation
-- Outlier detection
-- Imbalanced data classification 
+- [Interpolation](https://en.wikipedia.org/wiki/Interpolation)
+- [Outlier detection](https://en.wikipedia.org/wiki/Anomaly_detection)
+- [Imbalanced data classification](https://machinelearningmastery.com/what-is-imbalanced-classification/)
 
 ### Interpolation
 Two method of interpolation implemented
-- Linear interpolation
-- Cubic spline interpolation
+- [Linear interpolation](https://en.wikipedia.org/wiki/Linear_interpolation)
+- [Cubic spline interpolation](https://en.wikipedia.org/wiki/Spline_interpolation)
 
 ### Outlier detection
 Two method of outlier detection implemented
-- Z-Score
-- IQR distance from median
+- [Z-Score](https://www.geeksforgeeks.org/z-score-for-outlier-detection-python/)
+- [IQR distance from median](https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/box-whisker-plots/a/identifying-outliers-iqr-rule)
 
 ### Imbalance data classification
-Three method of balancing data of imbalance data classification implemented
-- Undersampling
-- Oversampling
-- SMOTE method
+Three method imbalance data classification implemented to balance data classification
+- [Undersampling](https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification/)
+- [Oversampling](https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification/)
+- [SMOTE method](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)
