@@ -5,3 +5,9 @@ django-rest-swagger
 flake8
 
 jdatetime
+
+scipy
+scikit-learn
+pandas
+matplotlib
+imbalanced-learn>=0.9,<1.2
