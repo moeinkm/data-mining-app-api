@@ -1,2 +1,2 @@
 release: python app/manage.py migrate
-web: cd app | gunicorn app/app.wsgi
+web: cd app | gunicorn app.wsgi
