@@ -25,7 +25,9 @@ SECRET_KEY = '8#=jt+*m76t!y&ak+o&$u%j4c5wx8jk^j+9nt^+@eayefxg+pc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://preprocess-data-app-api.herokuapp.com/'
+]
 
 
 # Application definition
