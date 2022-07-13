@@ -4,6 +4,9 @@ MAINTAINER Moein Kameli
 
 ENV PYTHONUNBU FFERED 1
 
+RUN apt update
+RUN apt install nginx
+
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
