@@ -13,3 +13,4 @@ matplotlib
 imbalanced-learn>=0.9,<1.2
 
 gunicorn
+whitenoise
