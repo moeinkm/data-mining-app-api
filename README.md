@@ -1,4 +1,6 @@
 # Preprocess data app api
+Deployed in heroku
+
 To see API documentation access https://preprocess-data-app-api.herokuapp.com/swagger
 ## Why preprocess data
 According to [this](https://learn.g2.com/data-preprocessing#:~:text=By%20preprocessing%20data%2C%20we%20make,to%20human%20error%20or%20bugs.) article by preprocessing data, we make it easier to interpret and use. This process eliminates inconsistencies or duplicates in data, which can otherwise negatively affect a model’s accuracy. Data preprocessing also ensures that there aren’t any incorrect or missing values due to human error or bugs.
